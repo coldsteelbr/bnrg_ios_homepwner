@@ -12,12 +12,24 @@ class ItemsViewController: UITableViewController{
     var itemStore: ItemStore!
     
     @IBAction func addNewItem(_ sender: UIButton){
-        print("Add")
+        let newItem = itemStore.createItem()
+        
+        if let index = itemStore.allItems.index(of: newItem){
+            let indexPath = IndexPath(row: index, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+        
     }
     
     
     @IBAction func toggleEditingMode(_ sender: UIButton){
-        print("Edit")
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+        }else{
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+        }
     }
     
     
@@ -38,5 +50,12 @@ class ItemsViewController: UITableViewController{
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = itemStore.allItems[indexPath.row]
+            itemStore.removeItem(item)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
