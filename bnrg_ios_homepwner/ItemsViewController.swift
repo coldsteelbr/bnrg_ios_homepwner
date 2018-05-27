@@ -11,6 +11,7 @@ import UIKit
 class ItemsViewController: UITableViewController{
     var itemStore: ItemStore!
     
+    // Adds new random Item and show it in the table view
     @IBAction func addNewItem(_ sender: UIButton){
         let newItem = itemStore.createItem()
         
@@ -21,7 +22,7 @@ class ItemsViewController: UITableViewController{
         
     }
     
-    
+    // Turns on editing mode
     @IBAction func toggleEditingMode(_ sender: UIButton){
         if isEditing {
             sender.setTitle("Edit", for: .normal)
@@ -32,11 +33,12 @@ class ItemsViewController: UITableViewController{
         }
     }
     
-    
+    // Returns number of items
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
     
+    // Populates a cell view with data from an item
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create an instance of UTTableViewCell, with default appearance
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
@@ -50,6 +52,7 @@ class ItemsViewController: UITableViewController{
         return cell
     }
     
+    // Deletes a row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = itemStore.allItems[indexPath.row]
@@ -57,5 +60,9 @@ class ItemsViewController: UITableViewController{
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }
