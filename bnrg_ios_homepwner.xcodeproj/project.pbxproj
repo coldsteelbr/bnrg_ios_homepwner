@@ -104,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				302C97FA20B92FF40036BD57 /* Item.swift */,
+				302C97FE20BAAB1E0036BD57 /* ItemCell.swift */,
 				302C97FC20B951D50036BD57 /* ItemStore.swift */,
 				302C97F820B92C810036BD57 /* ItemsViewController.swift */,
 				302C97CA20B8814C0036BD57 /* AppDelegate.swift */,
@@ -111,7 +112,6 @@
 				302C97D120B881680036BD57 /* Assets.xcassets */,
 				302C97D320B881680036BD57 /* LaunchScreen.storyboard */,
 				302C97D620B881680036BD57 /* Info.plist */,
-				302C97FE20BAAB1E0036BD57 /* ItemCell.swift */,
 			);
 			path = bnrg_ios_homepwner;
 			sourceTree = "<group>";
