@@ -38,6 +38,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     //
     // Logic
     //
+
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     // UITextViewDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
