@@ -33,9 +33,24 @@ class ItemsViewController: UITableViewController{
         }
     }
     
+    // Row's height
     override func viewDidLoad() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "showItem"?:
+        if let row = tableView.indexPathForSelectedRow?.row{
+            let item = itemStore.allItems[row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.item = item
+        }
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+        
     }
     
     
