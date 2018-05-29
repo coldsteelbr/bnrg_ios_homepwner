@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -91,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-5x-QLO">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
+                                <rect key="frame" x="8" y="72" width="359" height="543"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mE6-3v-NWC">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
@@ -154,25 +153,41 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxR-I8-Uy7">
-                                        <rect key="frame" x="0.0" y="114" width="359" height="473"/>
+                                        <rect key="frame" x="0.0" y="114" width="359" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-yu-t5c">
+                                        <rect key="frame" x="0.0" y="142.5" width="359" height="400.5"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="nHB-IF-BFA" firstAttribute="leading" secondItem="NdR-Bh-GBD" secondAttribute="leading" id="1As-fx-e36"/>
                                     <constraint firstItem="NdR-Bh-GBD" firstAttribute="leading" secondItem="O7K-6H-Ah9" secondAttribute="leading" id="nWu-ZU-qXd"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfi-9Q-K8m">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="5QY-f2-3Aw">
+                                        <connections>
+                                            <action selector="takePicture:" destination="waG-X8-e1Q" id="ZBN-b8-1sb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="raj-pE-hUE" firstAttribute="trailing" secondItem="gw9-5x-QLO" secondAttribute="trailing" constant="8" id="0RM-fA-6a9"/>
+                            <constraint firstItem="Xfi-9Q-K8m" firstAttribute="trailing" secondItem="raj-pE-hUE" secondAttribute="trailing" id="HGR-Cg-cR5"/>
                             <constraint firstItem="gw9-5x-QLO" firstAttribute="top" secondItem="raj-pE-hUE" secondAttribute="top" constant="8" id="KYa-qr-fwQ"/>
+                            <constraint firstItem="Xfi-9Q-K8m" firstAttribute="bottom" secondItem="raj-pE-hUE" secondAttribute="bottom" id="Lqd-eR-LNG"/>
+                            <constraint firstItem="Xfi-9Q-K8m" firstAttribute="top" secondItem="gw9-5x-QLO" secondAttribute="bottom" constant="8" id="OmT-Ds-fwM"/>
                             <constraint firstItem="gw9-5x-QLO" firstAttribute="leading" secondItem="raj-pE-hUE" secondAttribute="leading" constant="8" id="r0C-lp-c1S"/>
-                            <constraint firstItem="raj-pE-hUE" firstAttribute="bottom" secondItem="gw9-5x-QLO" secondAttribute="bottomMargin" constant="8" id="xbd-h1-W41"/>
+                            <constraint firstItem="Xfi-9Q-K8m" firstAttribute="leading" secondItem="raj-pE-hUE" secondAttribute="leading" id="xJI-ey-GtI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="raj-pE-hUE"/>
                         <connections>
@@ -181,6 +196,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="qxR-I8-Uy7" id="noe-Ld-IQo"/>
+                        <outlet property="imageView" destination="WL1-yu-t5c" id="2cN-mw-pYv"/>
                         <outlet property="nameField" destination="nHB-IF-BFA" id="002-qX-tC3"/>
                         <outlet property="serialNumberField" destination="NdR-Bh-GBD" id="wyP-sc-npO"/>
                         <outlet property="valueField" destination="O7K-6H-Ah9" id="MVP-Cg-XID"/>

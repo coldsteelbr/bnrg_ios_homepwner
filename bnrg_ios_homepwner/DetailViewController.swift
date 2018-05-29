@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate{
+    @IBOutlet var imageView: UIImageView!
     
     // Outlets
     @IBOutlet var nameField: UITextField!
@@ -42,9 +43,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     //
     // Logic
     //
-
+    
+    // Dismisses keyboard
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    // Takes picture
+    @IBAction func takePicture(_ sender: UIBarButtonItem) {
+        
     }
     
     // UITextViewDelegate
