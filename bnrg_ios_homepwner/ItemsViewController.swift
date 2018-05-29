@@ -9,7 +9,9 @@
 import UIKit
 
 class ItemsViewController: UITableViewController{
+    // Data
     var itemStore: ItemStore!
+    var imageStore: ImageStore!
     
     // Adds new random Item and show it in the table view
     @IBAction func addNewItem(_ sender: UIBarButtonItem){
@@ -47,6 +49,7 @@ class ItemsViewController: UITableViewController{
             let item = itemStore.allItems[row]
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.item = item
+            detailViewController.imageStore = imageStore
         }
         default:
             preconditionFailure("Unexpected segue identifier.")
@@ -91,7 +94,12 @@ class ItemsViewController: UITableViewController{
             
             // "delete" action
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) -> Void in
+                // removing item the store
                 self.itemStore.removeItem(item)
+                
+                // removing image from
+                self.imageStore.deleteImage(forKey: item.itemKey)
+                
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             })
             alertController.addAction(deleteAction)

@@ -18,6 +18,7 @@
 		302C97FD20B951D60036BD57 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C97FC20B951D50036BD57 /* ItemStore.swift */; };
 		302C97FF20BAAB1E0036BD57 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C97FE20BAAB1E0036BD57 /* ItemCell.swift */; };
 		302C980120BBAEC20036BD57 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C980020BBAEC20036BD57 /* DetailViewController.swift */; };
+		302ECF3920BD362E00CA7B55 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302ECF3820BD362E00CA7B55 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		302C97FC20B951D50036BD57 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		302C97FE20BAAB1E0036BD57 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		302C980020BBAEC20036BD57 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		302ECF3820BD362E00CA7B55 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				302C97FC20B951D50036BD57 /* ItemStore.swift */,
 				302C97F820B92C810036BD57 /* ItemsViewController.swift */,
 				302C980020BBAEC20036BD57 /* DetailViewController.swift */,
+				302ECF3820BD362E00CA7B55 /* ImageStore.swift */,
 				302C97CA20B8814C0036BD57 /* AppDelegate.swift */,
 				302C97CE20B8814C0036BD57 /* Main.storyboard */,
 				302C97D120B881680036BD57 /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 				302C97FD20B951D60036BD57 /* ItemStore.swift in Sources */,
 				302C980120BBAEC20036BD57 /* DetailViewController.swift in Sources */,
 				302C97CB20B8814C0036BD57 /* AppDelegate.swift in Sources */,
+				302ECF3920BD362E00CA7B55 /* ImageStore.swift in Sources */,
 				302C97FF20BAAB1E0036BD57 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

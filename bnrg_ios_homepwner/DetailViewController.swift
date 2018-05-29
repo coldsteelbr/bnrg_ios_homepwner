@@ -24,6 +24,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
+    var imageStore: ImageStore!
+    
     // Formatters (number&date)
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -73,6 +75,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // Getting picked image
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Storing the image
+        imageStore.setItem(image, forKey: item.itemKey)
+        
         // putting on screem
         imageView.image = image
         
@@ -88,6 +94,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        
+        // getting item key
+        let key = item.itemKey
+        // trying to get image and display it
+        let imageToDisplay = imageStore.image(forKey: key)
+        imageView.image = imageToDisplay
     }
     
     
