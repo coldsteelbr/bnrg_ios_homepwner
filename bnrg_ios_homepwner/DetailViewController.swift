@@ -17,7 +17,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var dateLabel: UILabel!
     
     // The Data
-    var item: Item!
+    var item: Item!{
+        didSet{
+            navigationItem.title = item.name
+        }
+    }
     
     // Formatters (number&date)
     let numberFormatter: NumberFormatter = {
