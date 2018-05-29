@@ -97,6 +97,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         // getting item key
         let key = item.itemKey
+        
         // trying to get image and display it
         let imageToDisplay = imageStore.image(forKey: key)
         imageView.image = imageToDisplay
