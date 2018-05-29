@@ -12,7 +12,7 @@ class ItemsViewController: UITableViewController{
     var itemStore: ItemStore!
     
     // Adds new random Item and show it in the table view
-    @IBAction func addNewItem(_ sender: UIButton){
+    @IBAction func addNewItem(_ sender: UIBarButtonItem){
         let newItem = itemStore.createItem()
         
         if let index = itemStore.allItems.index(of: newItem){
@@ -22,15 +22,10 @@ class ItemsViewController: UITableViewController{
         
     }
     
-    // Turns on editing mode
-    @IBAction func toggleEditingMode(_ sender: UIButton){
-        if isEditing {
-            sender.setTitle("Edit", for: .normal)
-            setEditing(false, animated: true)
-        }else{
-            sender.setTitle("Done", for: .normal)
-            setEditing(true, animated: true)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     // Row's height
