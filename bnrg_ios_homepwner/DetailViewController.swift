@@ -77,7 +77,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         // Storing the image
-        imageStore.setItem(image, forKey: item.itemKey)
+        imageStore.setImage(image, forKey: item.itemKey)
         
         // putting on screem
         imageView.image = image
